@@ -1,0 +1,19 @@
+{
+  "name": "bonanza_marketplace",
+  "version": "1.0.0",
+  "description": "A fullstack reactjs, redux, nodejs, express & MongoDB(MERN) eCommerce website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gisioraelvis/bonanza_marketplace.git"
+  },
+  "author": "Gisiora Elvis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gisioraelvis/bonanza_marketplace/issues"
+  },
+  "homepage": "https://github.com/gisioraelvis/bonanza_marketplace#readme"
+}
