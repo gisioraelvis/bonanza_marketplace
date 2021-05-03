@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 connectDB();
 
-if (process.env.NODE_ENV === 'dev') {
+if (process.env.NODE_ENV === "dev") {
   app.use(morgan("dev"));
 }
 
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(
-    `Server running in ${process.env.NODE_ENV} mode on PORT: ${PORT}`.yellow.bold
-      .underline
+    `Server running in ${process.env.NODE_ENV} mode on PORT: ${PORT}`.yellow
+      .bold.underline
   );
 });
