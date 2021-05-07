@@ -22,6 +22,9 @@ app.use(express.json());
 
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
+app.use("/", (req, res) => {
+  res.sendStatus(200);
+});
 
 app.use(notFound);
 app.use(errorHandler);

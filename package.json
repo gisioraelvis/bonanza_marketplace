@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node server/app",
-    "server": "nodemon server/app",
+    "devserver": "nodemon server/app",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run devserver\" \"npm run client\"",
     "import-data": "node server/seedData/seeder",
     "destroy-data": "node server/seedData/seeder -d",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "colors": "^1.4.0",
+    "concurrently": "^6.0.2",
     "nodemon": "^2.0.7"
   }
 }
