@@ -1,12 +1,7 @@
 import express from "express";
-import User from '../models/userModel.js'
-
+import { getUsers } from "../controllers/userController.js";
 const router = express.Router();
 
-router.get('/', async(req,res)=>{
-    const user = await User.find({})
-    res.send(user)
-
-})
+router.route("/").get(getUsers);
 
 export default router;
