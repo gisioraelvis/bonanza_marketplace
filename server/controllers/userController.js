@@ -18,7 +18,7 @@ export const getUsers = asyncHandler(async (req, res) => {
  * @access  Public
  */
 
-export const userAuth = asyncHandler(async (req, res) => {
+export const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
   if (user && (await user.matchPassword(password))) {
@@ -32,5 +32,26 @@ export const userAuth = asyncHandler(async (req, res) => {
   } else {
     res.status(401);
     throw new Error("Invalid password or email");
+  }
+});
+
+/**
+ * @desc    Get user profile
+ * @route   GET /api/users/profile
+ * @access  Protected
+ */
+
+export const getUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+  if (user) {
+    res.send({
+      _id: user.id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    });
+  } else {
+    res.status(404);
+    throw new Error("User not found");
   }
 });
