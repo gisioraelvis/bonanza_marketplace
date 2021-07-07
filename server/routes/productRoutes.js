@@ -3,6 +3,7 @@ import {
   getProducts,
   getProductById,
   createProductReview,
+  getTopProducts,
 } from "../controllers/productsController.js ";
 import protect from "../middleWares/userAuth.js";
 
@@ -11,5 +12,6 @@ const router = express.Router();
 router.route("/").get(getProducts);
 router.route("/:id").get(getProductById);
 router.route("/:id/reviews").post(protect, createProductReview);
+router.get("/top", getTopProducts);
 
 export default router;

@@ -1,13 +1,15 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Footer.css";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
-    <footer className="text-center py-3 ">
+    <footer>
       <Container>
         <Row>
-          <Col>&copy;Bonanza MarketPlace {new Date().getFullYear()}</Col>
+          <Col className="text-center py-3">
+            {currentYear}Copyright &copy; Bonanza
+          </Col>
         </Row>
       </Container>
     </footer>
