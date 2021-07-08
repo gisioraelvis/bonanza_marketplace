@@ -1,11 +1,11 @@
-import React from 'react'
-import { Pagination } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+import React from "react";
+import { Pagination } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
-const Paginate = ({ pages, page, isAdmin = false, keyword = '' }) => {
+const Paginate = ({ pages, page, isAdmin = false, keyword = "" }) => {
   return (
     pages > 1 && (
-      <Pagination>
+      <Pagination className="pagination justify-content-center">
         {[...Array(pages).keys()].map((x) => (
           <LinkContainer
             key={x + 1}
@@ -22,7 +22,7 @@ const Paginate = ({ pages, page, isAdmin = false, keyword = '' }) => {
         ))}
       </Pagination>
     )
-  )
-}
+  );
+};
 
-export default Paginate
+export default Paginate;

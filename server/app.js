@@ -21,6 +21,7 @@ if (process.env.NODE_ENV === "dev") {
 
 app.use(express.json());
 
+
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/uploads", uploadRouter);

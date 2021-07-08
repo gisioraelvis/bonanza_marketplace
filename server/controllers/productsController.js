@@ -8,7 +8,7 @@ import Product from "../models/productModel.js";
  */
 
 export const getProducts = asyncHandler(async (req, res) => {
-  const productsPerPg = 10;
+  const productsPerPg = 8;
   const page = Number(req.query.pageNumber) || 1;
 
   const keyword = req.query.keyword
@@ -26,7 +26,6 @@ export const getProducts = asyncHandler(async (req, res) => {
     .skip(productsPerPg * (page - 1));
 
   res.json({ products, page, pages: Math.ceil(count / productsPerPg) });
-  throw new Error("Working until here");
 });
 
 /**
@@ -94,9 +93,7 @@ export const createProductReview = asyncHandler(async (req, res) => {
  * @route   GET /api/products/top
  * @access  Public
  */
-
 export const getTopProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({}).sort({ rating: -1 }).limit(3);
-
   res.json(products);
 });

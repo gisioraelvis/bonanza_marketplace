@@ -10,8 +10,8 @@ import protect from "../middleWares/userAuth.js";
 const router = express.Router();
 
 router.route("/").get(getProducts);
+router.get("/top", getTopProducts);
 router.route("/:id").get(getProductById);
 router.route("/:id/reviews").post(protect, createProductReview);
-router.get("/top", getTopProducts);
 
 export default router;
