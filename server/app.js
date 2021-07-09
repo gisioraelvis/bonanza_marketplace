@@ -8,6 +8,7 @@ import connectDB from "./configs/db.js";
 import productRouter from "./routes/productRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import uploadRouter from "./routes/uploadRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 
 import { notFound, errorHandler } from "./middleWares/errorHandlers.js";
 
@@ -21,10 +22,10 @@ if (process.env.NODE_ENV === "dev") {
 
 app.use(express.json());
 
-
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/uploads", uploadRouter);
+app.use("/api/orders", orderRouter);
 
 app.use("/", (req, res) => {
   res.sendStatus(200);
