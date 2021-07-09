@@ -14,3 +14,31 @@ code {
 h1 {
   text-align: center;
 }
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  color: black;
+  bottom: 0;
+}
+
+.carousel img {
+  height: 480px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel a {
+  margin: 0 auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon,
+.carousel-indicators {
+  filter: invert(100%);
+}
