@@ -28,7 +28,6 @@ const ProfileScreen = ({ location, history }) => {
 
   const orderListMy = useSelector((state) => state.orderListMy);
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
-  console.log(orders)
 
   useEffect(() => {
     if (!userInfo) {
@@ -141,14 +140,18 @@ const ProfileScreen = ({ location, history }) => {
                     {order.isPaid ? (
                       order.paidAt.substring(0, 10)
                     ) : (
-                      <i className="fas fa-times" style={{ color: "red" }}></i>
+                      <i className="fas fa-times" style={{ color: "red" }}>
+                        X
+                      </i>
                     )}
                   </td>
                   <td>
                     {order.isDelivered ? (
                       order.deliveredAt.substring(0, 10)
                     ) : (
-                      <i className="fas fa-times" style={{ color: "red" }}></i>
+                      <i className="fas fa-times" style={{ color: "red" }}>
+                        X
+                      </i>
                     )}
                   </td>
                   <td>

@@ -26,6 +26,9 @@ app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/uploads", uploadRouter);
 app.use("/api/orders", orderRouter);
+app.use("/api/config/paypal", (req, res) =>
+  res.send(process.env.PAYPAL_CLIENT_ID)
+);
 
 app.use("/", (req, res) => {
   res.sendStatus(200);
