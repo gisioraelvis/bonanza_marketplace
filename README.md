@@ -3,7 +3,7 @@ A fullstack reactjs, redux, nodejs, express &amp; MongoDB(MERN) eCommerce websit
 
 Link to live project on heroku [bonanza-marketplace.herokuapp.com](https://bonanza-marketplace.herokuapp.com/)
 
-![screenshot]()
+![screenshot](https://github.com/gisioraelvis/bonanza_marketplace/blob/master/Screenshot.png)
 
 ## Features
 
